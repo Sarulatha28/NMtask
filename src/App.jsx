@@ -1,7 +1,7 @@
 import {createBrowserRouter, RouterProvider, createRoutesFromElements,Route,
 } from "react-router-dom";
 import Task from "./Task";
-import Saree from "./saree";
+import Saree from "./Saree";
 import RootLayout from "./layout/RootLayout";
 import Ethnic from "./Ethnic";
 import Mentop from "./Mentop";
