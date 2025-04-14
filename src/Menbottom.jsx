@@ -57,7 +57,7 @@ const sareeNames = [
 
 ];
 
-const Menbottom= () => {
+const Menbottom = () => {
   const [wishlist, setWishlist] = useState([]);
   const [cart, setCart] = useState([]);
 
