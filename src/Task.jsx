@@ -45,18 +45,18 @@ const Task = () => {
   }, [index]);
 
   const images = [
-    "https://i.pinimg.com/236x/16/8c/71/168c7155ca5256ccdb949133614f136e.jpg=Image+1",
-    "https://i.pinimg.com/236x/12/88/55/1288551b9d285f120ee45b1548af6651.jpg=Image+2",
-    "https://i.pinimg.com/736x/67/d9/b4/67d9b4dd24c03b84a55b5cea9242a79a.jpg=Image+3",
-    "https://i.pinimg.com/474x/43/64/75/436475501033d30fbfca9cf3ede88a18.jpg=Image+4",
-    "https://i.pinimg.com/236x/f9/12/03/f91203b5d18b0a06a8b9340e780c3242.jpg=Image+5",
+    "https://i.pinimg.com/236x/16/8c/71/168c7155ca5256ccdb949133614f136e.jpg",
+    "https://i.pinimg.com/236x/12/88/55/1288551b9d285f120ee45b1548af6651.jpg",
+    "https://i.pinimg.com/736x/67/d9/b4/67d9b4dd24c03b84a55b5cea9242a79a.jpg",
+    "https://i.pinimg.com/474x/43/64/75/436475501033d30fbfca9cf3ede88a18.jpg",
+    "https://i.pinimg.com/236x/f9/12/03/f91203b5d18b0a06a8b9340e780c3242.jpg",
   ];
 
   return (
     <div className="bg-gray-200 min-h-screen">
       {/* Navbar */}
       <Navbar/>
-      <div className="w-[90%] max-w-4xl overflow-hidden mx-auto rounded-xl shadow-lg">
+      <div className="w-full max-w-4xl overflow-hidden mx-auto rounded-xl shadow-lg">
       <div
         className="flex transition-transform duration-500 ease-in-out"
         ref={sliderRef}
@@ -66,7 +66,7 @@ const Task = () => {
             <img
               src={img}
               alt={`Slide ${idx + 1}`}
-              className="w-full h-[300px] object-cover"
+              className="w-full h-[50vh] object-cover"
             />
           </div>
         ))}

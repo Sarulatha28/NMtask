@@ -5,7 +5,7 @@ import RootLayout from "./layout/RootLayout";
 import Ethnic from "./Ethnic";
 import Mentop from "./Mentop";
 import Menbottom from './Menbottom';
-import Kidswear from "./kidswear";
+import Kidswear from "./Kidswear"; // ✅ matches file name
 import Western from "./Western";
 import Womenfoot from "./Womenfoot";
 import Menfoot from "./Menfoot";
