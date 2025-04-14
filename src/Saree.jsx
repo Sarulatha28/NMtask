@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 
 const sareeImages = [
   'https://i.pinimg.com/736x/33/48/22/33482278acc6fb5dfe5f3315e0b078a2.jpg',

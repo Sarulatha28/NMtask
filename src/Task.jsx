@@ -1,5 +1,4 @@
-
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 import React, { useEffect, useRef, useState } from "react";
 import {NavLink } from "react-router-dom";
 import img1 from './assets/saree.jpg';

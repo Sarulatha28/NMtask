@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 
 const menImages = [
 'https://i.pinimg.com/236x/1e/67/42/1e6742b4cbaeca7904e81bbc938f9fc3.jpg',
