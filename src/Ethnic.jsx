@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from "./Navbar";
 
-const sareeImages = [
+const Images = [
  'https://i.pinimg.com/236x/0a/c1/09/0ac109306a0afc4517e558627718eedc.jpg',
  'https://i.pinimg.com/236x/6b/4d/07/6b4d072796353580d3340e89a02c19f4.jpg',
  'https://i.pinimg.com/474x/78/5d/35/785d352ac8ffcc1ecdadc6bf64a51ab9.jpg',
@@ -29,7 +29,7 @@ const sareeImages = [
  
 ];
 
-const sareeNames = [
+const Names = [
  "Elegant Cotton Kurti",
 "Modern Georgette Kurti",
 "Classic Silk Kurti",
@@ -72,19 +72,19 @@ const Ethnic = () => {
   const addToCart = (index) => {
     if (!cart.includes(index)) {
       setCart([...cart, index]);
-      console.log(`Added ${sareeNames[index]} to cart`);
+      console.log(`Added ${Names[index]} to cart`);
     }
   };
 
   const buyNow = (index) => {
-    console.log(`Buying ${sareeNames[index]}`);
+    console.log(`Buying ${Names[index]}`);
   };
 
   return (
     <div className="pt-20 px-4">
       <Navbar />
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        {sareeImages.map((image, index) => (
+        {Images.map((image, index) => (
           <div
             key={index}
             className="relative bg-white p-3 rounded shadow transition-transform duration-300 transform hover:scale-105"
@@ -98,11 +98,11 @@ const Ethnic = () => {
 
             <img
               src={image}
-              alt={sareeNames[index]}
+              alt={Names[index]}
               className="w-full h-[200px] object-contain rounded"
             />
 
-            <h2 className="mt-2 font-semibold text-sm">{sareeNames[index]}</h2>
+            <h2 className="mt-2 font-semibold text-sm">{Names[index]}</h2>
             <p className="text-sm text-gray-600">₹{(index + 1) * 299}</p>
 
             <div className="mt-2 flex flex-col gap-1">

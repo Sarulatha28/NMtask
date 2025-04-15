@@ -1,59 +1,65 @@
 import React, { useState } from 'react';
 import Navbar from "./Navbar";
 
-const sareeImages = [
- 'https://i.pinimg.com/236x/0a/c1/09/0ac109306a0afc4517e558627718eedc.jpg',
- 'https://i.pinimg.com/236x/6b/4d/07/6b4d072796353580d3340e89a02c19f4.jpg',
- 'https://i.pinimg.com/474x/78/5d/35/785d352ac8ffcc1ecdadc6bf64a51ab9.jpg',
- 'https://i.pinimg.com/236x/73/37/58/73375845a9dc6af8a0ba704d32f23ba0.jpg',
- 'https://i.pinimg.com/236x/98/b7/17/98b7176972404f1d6e25e235495a99e6.jpg',
- 'https://i.pinimg.com/236x/e1/3a/84/e13a84fd50e4c6d08d4df47403c3bce3.jpg',
- 'https://i.pinimg.com/474x/e1/05/ca/e105cad71d58f91b2f4622089775f719.jpg',
- 'https://i.pinimg.com/236x/55/55/72/555572a2365431e4d2a57245ad7f959e.jpg',
- 'https://i.pinimg.com/236x/2b/d7/80/2bd780f074793993ad7fdf6199dba7d2.jpg',
- 'https://i.pinimg.com/736x/eb/6c/ff/eb6cff6d20674b334e4d7437d6751351.jpg',
- 'https://i.pinimg.com/236x/e8/a6/ac/e8a6ac32d0756a0813053e1435ca84eb.jpg',
- 'https://i.pinimg.com/474x/be/fe/d1/befed14d8fae3bd20708a5b90334c367.jpg',
- 'https://i.pinimg.com/236x/2f/08/3f/2f083fdd567cc4d15f3f6c6508037fd2.jpg',
- 'https://i.pinimg.com/236x/64/ee/9f/64ee9fad10147436a4247822a8d6be37.jpg',
- 'https://i.pinimg.com/474x/dc/aa/49/dcaa498170441176ce95e0dc2de70c6a.jpg',
- 'https://i.pinimg.com/474x/dc/aa/49/dcaa498170441176ce95e0dc2de70c6a.jpg',
- 'https://i.pinimg.com/236x/5e/29/43/5e2943928fa011cc45d09a1f7a3925b9.jpg',
- 'https://i.pinimg.com/474x/e2/ed/a5/e2eda5de66fa405157e8dd31ec0b6e2a.jpg',
- 'https://i.pinimg.com/236x/3d/b3/aa/3db3aa11ac351e5e681913e2e0df2ff1.jpg',
- 'https://i.pinimg.com/474x/53/50/9f/53509f63c19b46703360aa38178a8f7b.jpg',
- 'https://i.pinimg.com/236x/f4/b0/0a/f4b00a5c66cdeaa7ec0433ea4125d44d.jpg',
- 'https://i.pinimg.com/236x/72/b8/24/72b824d9120af10d7e7e81314e7eefb5.jpg',
- 'https://i.pinimg.com/236x/12/5a/0b/125a0b1303785270d7a8c5b4de4ccb6f.jpg',
- 'https://i.pinimg.com/236x/5a/d6/3d/5ad63de873234593e393c7c41a6f1b39.jpg',
- 
+const Images = [
+ 'https://i.pinimg.com/236x/05/91/b4/0591b47c283bf34cd919db5548ef0750.jpg',
+ 'https://i.pinimg.com/236x/2c/c9/ab/2cc9abd2161c341f40ffdf716f12ce20.jpg',
+ 'https://i.pinimg.com/236x/f1/bb/9b/f1bb9bcdb8d817205f4edb7a4fd8b941.jpg',
+ 'https://i.pinimg.com/236x/a1/a7/19/a1a719d445e39cc2c0c17901cd8a9351.jpg',
+ 'https://i.pinimg.com/236x/c3/8c/35/c38c351d41e4f05cf436c769922f545b.jpg',
+ 'https://i.pinimg.com/236x/8b/c2/06/8bc206b782f9bf29540c814e853a269e.jpg',
+ 'https://i.pinimg.com/236x/90/c2/69/90c2698b230a51094739c1cf5d160747.jpg',
+ 'https://i.pinimg.com/236x/e6/6a/f9/e66af91ac4352cc119df5a727eb34e4d.jpg',
+'https://i.pinimg.com/236x/03/7e/c8/037ec815a32a44801ea76b8555bfd073.jpg',
+'https://i.pinimg.com/474x/ee/2e/39/ee2e39dfaf11f09d1827ceaa510a2d06.jpg',
+'https://i.pinimg.com/236x/32/df/98/32df98e03f23a72f8700c4b5ead60990.jpg',
+'https://i.pinimg.com/236x/bd/46/52/bd4652033750db074eb0f9d52dfc445a.jpg',
+'https://i.pinimg.com/236x/5e/64/9f/5e649f907ba79ede7ab7a9dac44878d2.jpg',
+'https://i.pinimg.com/236x/6c/c2/ad/6cc2adffbcf12ae304966ca95d328d52.jpg',
+'https://i.pinimg.com/236x/e0/c3/1a/e0c31a6e9a4a15c132ec4544494ede7d.jpg',
+'https://i.pinimg.com/236x/20/42/2d/20422d6178b39383fca0f55e627e743f.jpg',
+'https://i.pinimg.com/236x/90/3d/34/903d34965a107406ae7826f204abb4a1.jpg',
+'https://i.pinimg.com/236x/5f/0d/7c/5f0d7c2c359f94df8c42d4d75c865557.jpg',
+'https://i.pinimg.com/236x/7c/f6/7e/7cf67e7a61b252eac1a0cece5be29630.jpg',
+'https://i.pinimg.com/236x/95/9b/94/959b942f67a373478e287f0f57c2ebf0.jpg',
+'https://i.pinimg.com/236x/0e/be/b3/0ebeb3a6b859819e23a92a5f54c9f3b2.jpg',
+'https://i.pinimg.com/236x/3a/5e/16/3a5e16689c7ecffd2b52143d0b573d01.jpg',
+'https://i.pinimg.com/474x/83/05/50/830550ef8d9a7cfd7dcf6b162e4da903.jpg',
+'https://i.pinimg.com/236x/b9/ff/59/b9ff59040c57a1f08b5c885f7c751afa.jpg',
+'https://i.pinimg.com/236x/7e/65/27/7e6527ab9bb674221e1d155c0de92992.jpg',
 ];
+const Names = [
+ 'Formal Leather Oxfords',
+'Casual Slip-On Loafers',
+'Brown Lace-Up Boots',
+'Classic Black Brogues',
+'Comfortable Walking Sneakers',
+'Men’s Ethnic Jutis',
+'High Top Canvas Shoes',
+'Strap-On Sandals',
+'Stylish Party Wear Derbies',
+'Padded Sports Shoes',
+'Textured Monk Strap Shoes',
+'Suede Driving Moccasins',
+'Daily Wear Flip-Flops',
+'Winter-Ready Fur-Lined Shoes',
+'Chunky Sole Running Shoes',
+'Slip-On Mesh Trainers',
+'Woven Leather Sandals',
+'Rubber-Soled Chappals',
+'Minimalist Slide Sandals',
+'Outdoor Trekking Shoes',
+'Slip-Resistant Office Shoes',
+'Classic Derby Lace-Ups',
+'Zipper High Ankle Boots',
+'Formal Buckle Strap Shoes',
+'Printed Canvas Slip-Ons',
+'Premium Leather Sneakers',
+'Loafer Style Mojaris',
+'Round-Toe Ethnic Footwear',
+'Stylish Two-Tone Shoes',
+'Lightweight Jogging Shoes'
 
-const sareeNames = [
- "Elegant Cotton Kurti",
-"Modern Georgette Kurti",
-"Classic Silk Kurti",
-"Trendy Printed Kurti",
-"Handloom Cotton Kurti",
-"Party Wear Kurti",
-"Casual Everyday Kurti",
-"Banarasi Work Kurti",
-"Kanjivaram Style Kurti",
-"Festive Embellished Kurti",
-"Zari Embroidered Kurti",
-"Traditional South Kurti",
-"Designer Long Kurti",
-"Stylish Asymmetric Kurti",
-"Thread Work Kurti",
-"Digital Print Kurti",
-"Floral Pattern Kurti",
-"Lightweight Summer Kurti",
-"Office Wear Kurti",
-"Pastel Hue Kurti",
-"Lace Border Kurti",
-"Daily Wear Kurti",
-"Ethnic Flare Kurti",
-"Luxury Tussar Kurti",
 
 ];
 
@@ -72,19 +78,19 @@ const Menfoot = () => {
   const addToCart = (index) => {
     if (!cart.includes(index)) {
       setCart([...cart, index]);
-      console.log(`Added ${sareeNames[index]} to cart`);
+      console.log(`Added ${Names[index]} to cart`);
     }
   };
 
   const buyNow = (index) => {
-    console.log(`Buying ${sareeNames[index]}`);
+    console.log(`Buying ${Names[index]}`);
   };
 
   return (
     <div className="pt-20 px-4">
       <Navbar />
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        {sareeImages.map((image, index) => (
+        {Images.map((image, index) => (
           <div
             key={index}
             className="relative bg-white p-3 rounded shadow transition-transform duration-300 transform hover:scale-105"
@@ -98,11 +104,11 @@ const Menfoot = () => {
 
             <img
               src={image}
-              alt={sareeNames[index]}
+              alt={Names[index]}
               className="w-full h-[200px] object-contain rounded"
             />
 
-            <h2 className="mt-2 font-semibold text-sm">{sareeNames[index]}</h2>
+            <h2 className="mt-2 font-semibold text-sm">{Names[index]}</h2>
             <p className="text-sm text-gray-600">₹{(index + 1) * 299}</p>
 
             <div className="mt-2 flex flex-col gap-1">

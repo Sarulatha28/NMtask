@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from "./Navbar";
 
-const sareeImages = [
+const Images = [
  'https://i.pinimg.com/236x/81/75/6c/81756cc2f251cf3557061a9e8b495a6a.jpg',
  'https://i.pinimg.com/236x/72/b8/83/72b883f2263b7997168a775c1860cbde.jpg',
  'https://i.pinimg.com/236x/2f/a8/2e/2fa82ea3b118054689825ddb20fb1008.jpg',
@@ -36,32 +36,31 @@ const sareeImages = [
 
 ];
 
-const sareeNames = [
- "Elegant Cotton Kurti",
-"Modern Georgette Kurti",
-"Classic Silk Kurti",
-"Trendy Printed Kurti",
-"Handloom Cotton Kurti",
-"Party Wear Kurti",
-"Casual Everyday Kurti",
-"Banarasi Work Kurti",
-"Kanjivaram Style Kurti",
-"Festive Embellished Kurti",
-"Zari Embroidered Kurti",
-"Traditional South Kurti",
-"Designer Long Kurti",
-"Stylish Asymmetric Kurti",
-"Thread Work Kurti",
-"Digital Print Kurti",
-"Floral Pattern Kurti",
-"Lightweight Summer Kurti",
-"Office Wear Kurti",
-"Pastel Hue Kurti",
-"Lace Border Kurti",
-"Daily Wear Kurti",
-"Ethnic Flare Kurti",
-"Luxury Tussar Kurti",
-
+const Names = [
+'Rose Gold Women’s Watch',
+'Elegant Crystal Bracelet',
+'Floral Wool Winter Dress',
+'Pastel Leather Strap Watch',
+'Pearl Stud Earrings',
+'Embroidered Shawl Wrap',
+'Trendy Handbag with Tassels',
+'Stylish Winter Coat for Women',
+'Minimalist Gold Pendant',
+'Silk Scarf with Floral Print',
+'Fuzzy Knit Cardigan',
+'Luxury Designer Watch',
+'Chunky Statement Necklace',
+'Casual Winter Hoodie Dress',
+'Stone-Studded Ring',
+'Classic Leather Men’s Watch',
+'Wool Blend Winter Jacket',
+'Stainless Steel Chain Watch',
+'Fleece-Lined Hoodie',
+'Analog Black Dial Watch',
+'Modern Beanie Cap',
+'Smart Casual Wristwatch',
+'Checkered Winter Shirt',
+'Men’s Scarf and Gloves Set'
 ];
 
 const Watch = () => {
@@ -79,19 +78,19 @@ const Watch = () => {
   const addToCart = (index) => {
     if (!cart.includes(index)) {
       setCart([...cart, index]);
-      console.log(`Added ${sareeNames[index]} to cart`);
+      console.log(`Added ${Names[index]} to cart`);
     }
   };
 
   const buyNow = (index) => {
-    console.log(`Buying ${sareeNames[index]}`);
+    console.log(`Buying ${Names[index]}`);
   };
 
   return (
     <div className="pt-20 px-4">
       <Navbar />
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        {sareeImages.map((image, index) => (
+        {Images.map((image, index) => (
           <div
             key={index}
             className="relative bg-white p-3 rounded shadow transition-transform duration-300 transform hover:scale-105"
@@ -105,11 +104,11 @@ const Watch = () => {
 
             <img
               src={image}
-              alt={sareeNames[index]}
+              alt={Names[index]}
               className="w-full h-[200px] object-contain rounded"
             />
 
-            <h2 className="mt-2 font-semibold text-sm">{sareeNames[index]}</h2>
+            <h2 className="mt-2 font-semibold text-sm">{Names[index]}</h2>
             <p className="text-sm text-gray-600">₹{(index + 1) * 299}</p>
 
             <div className="mt-2 flex flex-col gap-1">
