@@ -11,7 +11,8 @@ import img7 from './assets/watch.jpg';
 import img8 from './assets/western1.jpg';
 import img9 from './assets/menbt.jpg';
 import img10 from './assets/mentop.webp';
-
+import { BsArrowRight } from "react-icons/bs";
+import "./index.css";
 const Task = () => {
   //fashion
   const cardimages = [
@@ -26,9 +27,14 @@ const Task = () => {
     { id: 9, img: img7, Text: "Watches and Accessories", path: "/watch" },
     { id: 10, img: img5, Text: "Winter", path: "/winter" },
   ];
+ 
+
   const sliderRef = useRef(null);
   const [index, setIndex] = useState(0);
   const totalImages = 5;
+
+  
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,13 +50,49 @@ const Task = () => {
     }
   }, [index]);
 //silder
-  const images = [
-    "https://i.pinimg.com/236x/16/8c/71/168c7155ca5256ccdb949133614f136e.jpg",
-    "https://i.pinimg.com/236x/12/88/55/1288551b9d285f120ee45b1548af6651.jpg",
-    "https://i.pinimg.com/736x/67/d9/b4/67d9b4dd24c03b84a55b5cea9242a79a.jpg",
-    "https://i.pinimg.com/474x/43/64/75/436475501033d30fbfca9cf3ede88a18.jpg",
-    "https://i.pinimg.com/236x/f9/12/03/f91203b5d18b0a06a8b9340e780c3242.jpg",
-  ];
+const cardData = [
+  {
+    id: 1,
+    image: "https://i.ibb.co.com/qrzTZqK/Image-5.png",
+    title: "Xiaomi True Wireless Earbuds",
+    description: "Escape the noise, It’s time to hear the magic with Xiaomi Earbuds.",
+    price: " ₹299 ",
+    bgColor: "#F7E99E"
+  },
+  {
+    id: 2,
+    image: "https://i.pinimg.com/236x/ca/6e/f7/ca6ef77b8a0598d9ff9b51046bd14ed9.jpg",
+    title: "Apple Smart Watch Series 8",
+    description: "Stylish, comfortable, and super soft smart watch.",
+    price: "₹159 ",
+    bgColor: "#F7E7E3"
+  },
+  {
+    id: 3,
+    image: "https://i.pinimg.com/236x/d6/d4/0b/d6d40bdfa4a6d942072b823e955dacb4.jpg",
+    title: "Puma Winter Sneakers",
+    description: "Comfortable everyday sneakers for every style.",
+    price: "₹109",
+    bgColor: "#DDEFE0"
+  },
+  {
+    id: 4,
+    image: "https://i.pinimg.com/236x/65/6b/78/656b780f2de75b3746de1859e05f3893.jpg",
+    title: "JBL Boombox Bluetooth Speaker",
+    description: "A compact portable Bluetooth speaker with great sound.",
+    price: "₹199 ",
+    bgColor: "#F2E2E4"
+  },
+  {
+    id: 5,
+    image: "https://i.pinimg.com/236x/72/58/7b/72587befa96c0fdc0b8bb47aaf29710f.jpg",
+    title: "Xbox Wireless Controller",
+    description: "Upgrade your gaming experience with this controller.",
+    price: "₹89 ",
+    bgColor: "#E1E8F2"
+  }
+];
+
 //electronices
 const Electimages = [
   {
@@ -119,18 +161,27 @@ const Electimages = [
     <div className="bg-gray-200 min-h-screen">
       {/* Navbar */}
       <Navbar/>
-      <div className="w-full max-w-4xl overflow-hidden mx-auto rounded-xl shadow-lg">
-      <div
-        className="flex transition-transform duration-500 ease-in-out"
-        ref={sliderRef}
-      >
-        {images.map((img, idx) => (
-          <div key={idx} className="min-w-full">
-            <img
-              src={img}
-              alt={`Slide ${idx + 1}`}
-              className="w-full h-[50vh] object-cover"
-            />
+       <div className="w-full overflow-hidden py-6 pt-5 bg-gray-100">
+      <div className="flex w-max scroll-animation space-x-4 px-4">
+        {cardData.concat(cardData).map((item, index) => (
+         <div
+  key={item.id}
+  className="w-60% h-[95vh] pt-20 flex flex-col items-center justify-center text-center px-6"
+  style={{ backgroundColor: item.bgColor }}
+>
+            <img src={item.image} alt="product" className="w-[200px] mx-auto" />
+            <h3 className="text-[1.2rem] font-semibold mt-2">{item.title}</h3>
+            <p className="text-gray-700 mt-2">{item.description}</p>
+            <div className="flex items-center justify-center my-4 gap-2">
+              <p className="text-gray-700">Only for:</p>
+              <span className="py-1 px-3 bg-white rounded-md font-semibold text-gray-900 text-[0.9rem]">
+                {item.price}
+              </span>
+            </div>
+            <button className="group flex items-center justify-center gap-2 w-50% bg-[#FA8232] text-white py-2.5 rounded-md hover:bg-[#DE732D] transition-all duration-300">
+              Shop now{" "}
+              <BsArrowRight className="group-hover:ml-1 transition-all duration-300" />
+            </button>
           </div>
         ))}
       </div>

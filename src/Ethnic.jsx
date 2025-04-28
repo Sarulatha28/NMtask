@@ -56,7 +56,7 @@ const Names = [
 "Luxury Tussar Kurti",
 
 ];
-
+ 
 const Ethnic = () => {
   const [wishlist, setWishlist] = useState([]);
   const [cart, setCart] = useState([]);
