@@ -11,7 +11,9 @@ import Womenfoot from "./Womenfoot";
 import Menfoot from "./Menfoot";
 import Winter from "./Winter";
 import Watch from "./Watch";
-import Smartphone from "./Smartphone"
+import Smartphone from "./Smartphone";
+import Laptop from "./Laptop";
+import Smartwatch from "./Smartwatch";
 
 function App() {
   const router = createBrowserRouter(
@@ -29,6 +31,9 @@ function App() {
         <Route path="/watch" element={<Watch />} />
         <Route path="/winter" element={<Winter />} />
         <Route path="/smartphone" element={<Smartphone />} />
+        <Route path="/laptop" element={<Laptop />} />
+        <Route path="/smartwatch" element={<Smartwatch/>} />
+       
       </Route>
     )
   );
